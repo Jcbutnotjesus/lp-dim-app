@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lp-dim-app-jc": {
+      "hosting": {
+        "lp-dim-app": [
+          "lp-dim-app-jc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lp-dim-app-jc"
+  }
+}
