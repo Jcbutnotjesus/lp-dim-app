@@ -3,20 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'students', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo : 'students',
+    pathMatch: 'full'
+  },
   {
     path: 'students',
-    loadChildren: () =>
-      import('./student/student.module').then((e) => e.StudentModule),
+    loadChildren: () => import('./student/student.module').then(m => m.StudentModule)
   },
   {
     path: '**',
-    component: NotFoundComponent,
-  },
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
